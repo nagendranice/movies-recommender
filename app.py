@@ -24,12 +24,11 @@ def recommend(movie):
 page_bg_img = '''
 <style>
 body {
-background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-image: url("https://pixabay.com/photos/bridge-shine-sky-vietnam-night-7504605/");
 background-size: cover;
 }
 </style>
 '''
-
 st.markdown(page_bg_img, unsafe_allow_html=True)
 movies_list = pickle.load(open('movies-dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_list)
