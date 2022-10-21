@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 st.set_page_config(layout="wide")
 
-video_html = """
+'''video_html = """
 		<style>
 
 		#myVideo {
@@ -31,7 +31,17 @@ video_html = """
 		</video>
         """
 
-st.markdown(video_html, unsafe_allow_html=True)
+st.markdown(video_html, unsafe_allow_html=True)'''
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://pixabay.com/photos/bridge-shine-sky-vietnam-night-7504605/");
+background-size: cover;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
 def fetch_poster(movie_id):
     response = requests.get('https://api.themoviedb.org/3/movie/{}?api_key=bcfaabeb7261ab4bffc503cba6e3a4d3&language=en-US'.format(movie_id))
     data = response.json()
