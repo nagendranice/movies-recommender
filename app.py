@@ -21,6 +21,11 @@ def recommend(movie):
         recommended_movies.append(movies.iloc[i[0]].title)
         recommended_movies_posters.append(fetch_poster(movie_id))
     return recommended_movies,recommended_movies_posters
+
+movies_list = pickle.load(open('movies-dict.pkl', 'rb'))
+movies = pd.DataFrame(movies_list)
+similarity = pickle.load(open('similarity.pkl','rb'))
+st.title('Movie Recommender System')
 page_bg_img = '''
 <style>
 body {
@@ -30,11 +35,6 @@ background-size: cover;
 </style>
 '''
 st.markdown(page_bg_img, unsafe_allow_html=True)
-movies_list = pickle.load(open('movies-dict.pkl', 'rb'))
-movies = pd.DataFrame(movies_list)
-similarity = pickle.load(open('similarity.pkl','rb'))
-st.title('Movie Recommender System')
-
 selected_movie_name = st.selectbox('Which movie do you like',movies['title'].values)
 
 if st.button('Recommend'):
