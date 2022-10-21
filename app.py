@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 
 '''video_html = """
 		<style>
