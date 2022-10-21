@@ -21,7 +21,16 @@ def recommend(movie):
         recommended_movies.append(movies.iloc[i[0]].title)
         recommended_movies_posters.append(fetch_poster(movie_id))
     return recommended_movies,recommended_movies_posters
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-size: cover;
+}
+</style>
+'''
 
+st.markdown(page_bg_img, unsafe_allow_html=True)
 movies_list = pickle.load(open('movies-dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_list)
 similarity = pickle.load(open('similarity.pkl','rb'))
