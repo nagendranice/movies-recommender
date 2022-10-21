@@ -26,15 +26,7 @@ movies_list = pickle.load(open('movies-dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_list)
 similarity = pickle.load(open('similarity.pkl','rb'))
 st.title('Movie Recommender System')
-page_bg_img = '''
-<style>
-body {
-background-image: url("https://pixabay.com/photos/bridge-shine-sky-vietnam-night-7504605/");
-background-size: cover;
-}
-</style>
-'''
-st.markdown(page_bg_img, unsafe_allow_html=True)
+
 selected_movie_name = st.selectbox('Which movie do you like',movies['title'].values)
 
 if st.button('Recommend'):
